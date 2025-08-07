@@ -1,51 +1,74 @@
 
 body {
-    background: #f9f9f9;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #111;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
 }
-.container {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+
+.header {
+  background-color: #1A1B41;
+  padding: 1rem;
+  text-align: center;
 }
+
 .logo {
-    max-width: 280px;
-    display: block;
-    margin: 0 auto 1rem;
+  max-height: 60px;
 }
-form label {
-    display: block;
-    margin-top: 1rem;
-    font-weight: bold;
+
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-select, input {
-    width: 100%;
-    padding: 0.6rem;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    margin-top: 0.3rem;
+
+h1 {
+  text-align: center;
+  color: #1A1B41;
+  margin-bottom: 2rem;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+input[type="text"],
+input[type="tel"] {
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
 button {
-    margin-top: 1.5rem;
-    padding: 0.7rem 1.2rem;
-    background-color: #1A1B41;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+  padding: 0.9rem;
+  font-size: 1rem;
+  background-color: #1A1B41;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
+
 button:hover {
-    background-color: #292B61;
+  background-color: #292B61;
 }
+
 #resultado {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: #e0e6f0;
-    border-radius: 10px;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: #e6f0ff;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.hidden {
+  display: none;
 }
