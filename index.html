@@ -3,105 +3,47 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diagnóstico de Cultura - Silveira</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fefefe;
-      padding: 20px;
-      color: #333;
-    }
-    h1 {
-      color: #0a2c54;
-    }
-    .pergunta {
-      margin-bottom: 20px;
-    }
-    .resultado {
-      margin-top: 30px;
-      padding: 15px;
-      border: 2px solid #0a2c54;
-      border-radius: 10px;
-      background: #fff;
-    }
-    input[type="text"] {
-      padding: 10px;
-      width: 100%;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    button {
-      background: #0a2c54;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #163a70;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diagnóstico de Cultura - Silveira Contabilidade</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Diagnóstico de Cultura na Gestão de Pessoas</h1>
-  <p>Descubra o nível de maturidade da sua empresa e saiba onde evoluir para reter talentos, desenvolver lideranças e ter uma equipe alinhada e produtiva.</p>
-  <input type="text" id="nome" placeholder="Nome">
-  <input type="text" id="telefone" placeholder="Telefone/WhatsApp">
-  <div id="perguntas"></div>
-  <button onclick="mostrarResultado()">Ver Resultado</button>
-  <div id="resultado" class="resultado" style="display:none;"></div>
+  <header>
+    <img src="logo.png" alt="Logo Silveira Contabilidade" class="logo" />
+    <h1>Diagnóstico de Cultura na Gestão de Pessoas</h1>
+  </header>
 
-  <script>
-    const perguntas = [
-      "Sua empresa possui valores organizacionais claros e divulgados para toda a equipe?",
-      "Os líderes da sua empresa têm tempo e preparo para desenvolver suas equipes além das demandas operacionais?",
-      "Existe uma cultura estruturada de feedbacks constantes e alinhamento entre líderes e liderados?",
-      "As decisões sobre pessoas (promoções, desligamentos, reconhecimentos) são baseadas em dados e critérios claros?",
-      "Os colaboradores têm clareza sobre o papel que desempenham na estratégia da empresa?",
-      "A empresa tem um plano de desenvolvimento individual ou trilhas de carreira para os colaboradores?",
-      "Existe uma estratégia ativa para retenção de talentos e manutenção de um bom clima organizacional?"
-    ];
+  <main>
+    <form id="diagnosticoForm">
+      <label>1. A empresa possui uma cultura organizacional bem definida?</label>
+      <select name="q1"><option>Sim</option><option>Não</option></select>
 
-    const perguntasDiv = document.getElementById("perguntas");
-    perguntas.forEach((texto, i) => {
-      perguntasDiv.innerHTML += `
-        <div class="pergunta">
-          <p>${i + 1}. ${texto}</p>
-          <label><input type="radio" name="q${i}" value="Sim"> Sim</label>
-          <label><input type="radio" name="q${i}" value="Não"> Não</label>
-        </div>
-      `;
-    });
+      <label>2. Os valores da empresa são comunicados claramente aos colaboradores?</label>
+      <select name="q2"><option>Sim</option><option>Não</option></select>
 
-    function mostrarResultado() {
-      const nome = document.getElementById("nome").value;
-      const telefone = document.getElementById("telefone").value.replace(/\D/g, '');
-      let qtdSim = 0;
-      for (let i = 0; i < 7; i++) {
-        const val = document.querySelector('input[name="q' + i + '"]:checked');
-        if (val && val.value === "Sim") qtdSim++;
-      }
+      <label>3. A liderança promove a cultura organizacional?</label>
+      <select name="q3"><option>Sim</option><option>Não</option></select>
 
-      let texto = "";
-      if (qtdSim >= 6) texto = "Cultura de Gestão com Alta Maturidade";
-      else if (qtdSim >= 3) texto = "Cultura de Gestão com Média Maturidade";
-      else texto = "Cultura de Gestão com Baixa Maturidade";
+      <label>4. Existe um processo estruturado de integração de novos colaboradores?</label>
+      <select name="q4"><option>Sim</option><option>Não</option></select>
 
-      const resultadoDiv = document.getElementById("resultado");
-      resultadoDiv.style.display = "block";
-      resultadoDiv.innerHTML = `
-        <strong>Resultado:</strong><br>
-        ${texto}<br>
-        Total de "Sim": ${qtdSim} de 7<br><br>
-        <a href="https://wa.me/55${telefone}?text=${encodeURIComponent(`Olá ${nome}, obrigado por responder o diagnóstico da Silveira Contabilidade. Seu resultado foi: ${texto}. Caso queira conversar com um especialista, é só responder por aqui!`)}" target="_blank">
-          <button>Enviar no WhatsApp</button>
-        </a>
-      `;
-    }
-  </script>
+      <label>5. A cultura da empresa é alinhada com os objetivos estratégicos?</label>
+      <select name="q5"><option>Sim</option><option>Não</option></select>
+
+      <label>Nome:</label>
+      <input type="text" name="nome" required />
+      <label>Telefone:</label>
+      <input type="tel" name="telefone" required />
+
+      <button type="submit">Enviar Diagnóstico</button>
+    </form>
+
+    <div id="resultado" style="display:none;">
+      <h2>Resultado do Diagnóstico</h2>
+      <p id="mensagemResultado"></p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
