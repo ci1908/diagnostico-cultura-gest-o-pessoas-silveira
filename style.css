@@ -1,65 +1,51 @@
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
-  margin: 0;
-  padding: 0;
+    background: #f9f9f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #111;
 }
-
 .container {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
-
 .logo {
-  display: block;
-  max-width: 250px;
-  margin: 0 auto 20px;
+    max-width: 280px;
+    display: block;
+    margin: 0 auto 1rem;
 }
-
-h1 {
-  text-align: center;
-  color: #1f1f50;
+form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
 }
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+select, input {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 0.3rem;
 }
-
-input[type="text"],
-input[type="tel"] {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
 button {
-  padding: 12px;
-  font-size: 16px;
-  background-color: #1f1f50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.2rem;
+    background-color: #1A1B41;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
-
 button:hover {
-  background-color: #15153a;
+    background-color: #292B61;
 }
-
 #resultado {
-  margin-top: 30px;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.hidden {
-  display: none;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #e0e6f0;
+    border-radius: 10px;
 }
